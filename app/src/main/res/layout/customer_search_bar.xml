@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/search_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/themColor"
+    android:paddingTop="@dimen/dp_8"
+    android:paddingBottom="@dimen/dp_8">
+
+    <ImageView
+        android:id="@+id/iv_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/app_name"
+        android:paddingStart="@dimen/dp_10"
+        android:paddingEnd="@dimen/dp_10"
+        android:src="@drawable/title_back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/et_content"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="@dimen/dp_12"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:background="@drawable/search_edit_background"
+        android:hint="@string/search_input_tips"
+        android:imeOptions="actionSearch"
+        android:inputType="text"
+        android:textSize="@dimen/sp_14"
+        android:paddingLeft="@dimen/dp_6"
+        app:layout_constraintLeft_toRightOf="@id/iv_back"
+        app:layout_constraintRight_toLeftOf="@id/tv_search"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_close"
+        android:layout_width="@dimen/dp_36"
+        android:layout_height="@dimen/dp_16"
+        android:src="@drawable/ic_close"
+        app:layout_constraintBottom_toBottomOf="@id/et_content"
+        app:layout_constraintRight_toRightOf="@id/et_content"
+        app:layout_constraintTop_toTopOf="@id/et_content" />
+
+    <TextView
+        android:id="@+id/tv_search"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="@dimen/dp_12"
+        android:layout_marginRight="@dimen/dp_12"
+        android:background="@drawable/text_selector"
+        android:gravity="center"
+        android:text="@string/search"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintLeft_toRightOf="@id/et_content"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

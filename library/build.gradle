@@ -1,0 +1,69 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion build_versions.target_sdk
+    buildToolsVersion build_versions.build_tools
+
+    defaultConfig {
+        minSdkVersion build_versions.min_sdk
+        targetSdkVersion build_versions.target_sdk
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    buildFeatures {
+        dataBinding = true
+        // for view binding :
+        // viewBinding = true
+    }
+
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    //android x支持
+    api deps.support.app_compat
+    api deps.support.design
+    api deps.support.fragment_runtime_ktx
+
+    api deps.support.core_ktx
+    api deps.kotlin.kotlin_stdlib_jdk8
+    api deps.kotlin.kotlin_reflect
+    api deps.constraintlayout
+
+    api deps.titlebar
+    //沉浸式
+    api deps.immersionbar.immersionbar
+    api deps.immersionbar.immersionbar_ktx
+    //万能工具库
+    api deps.utilcodex
+    //协程
+    api deps.coroutines.coroutines_core
+    api deps.coroutines.coroutines_android
+    //网络请求库
+    api deps.retrofit.retrofit
+    api deps.retrofit.converter_gson
+    //日志打印库
+    api deps.logging_interceptor
+    //支持retrofit 修改域名库
+    api deps.retrofit_url_manager
+    //lifecycle
+    api deps.lifecycle.extensions
+    api deps.lifecycle.viewmodel_ktx
+    //多视图
+    api deps.statelayout
+    //弹窗
+    api deps.xpopup
+    //evenbus
+    api deps.eventbus
+
+}

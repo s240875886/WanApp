@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+
+        <variable
+            name="model"
+            type="com.tw.wan.data.viewmodels.HotVM" />
+
+
+        <variable
+            name="list"
+            type="java.util.List&lt;com.tw.wan.bean.HotBean>" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".activity.HotActivity">
+
+        <include
+            android:id="@+id/search_bar"
+            layout="@layout/customer_search_bar" />
+
+        <TextView
+            android:id="@+id/tv_hot_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_12"
+            android:layout_marginLeft="@dimen/dp_12"
+            android:layout_marginTop="@dimen/dp_12"
+            android:text="@string/hot_search"
+            android:textColor="@color/colorRed"
+            android:textSize="@dimen/sp_16"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/search_bar" />
+
+        <com.donkingliang.labels.LabelsView
+            android:id="@+id/labels"
+            setDatas="@{list}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title"
+            android:layout_marginLeft="@dimen/dp_12"
+            android:layout_marginTop="@dimen/dp_12"
+            android:layout_marginRight="@dimen/dp_12"
+            app:labelBackground="@drawable/lable_selector"
+            app:labelTextColor="@color/color_333333"
+            app:labelTextPaddingBottom="@dimen/dp_5"
+            app:labelTextPaddingLeft="@dimen/dp_8"
+            app:labelTextPaddingRight="@dimen/dp_8"
+            app:labelTextPaddingTop="@dimen/dp_5"
+            app:labelTextSize="@dimen/sp_14"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_hot_title"
+            app:lineMargin="@dimen/dp_10"
+            app:selectType="SINGLE"
+            app:wordMargin="@dimen/dp_6" />
+
+        <TextView
+            app:layout_constraintTop_toBottomOf="@id/labels"
+            android:id="@+id/search_text_history"
+            android:layout_width="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_12"
+            android:layout_marginLeft="@dimen/dp_12"
+            android:layout_marginTop="@dimen/dp_12"
+            android:text="@string/search_history"
+            android:textColor="@color/color_a0a0a0"
+            android:textSize="@dimen/sp_16" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/searchList"
+            tools:listitem="@layout/item_search_history"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:overScrollMode="never"
+            android:scrollbars="none"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/search_text_history" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

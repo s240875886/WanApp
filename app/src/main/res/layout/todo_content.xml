@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.tw.wan.data.viewmodels.TodoVM" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_15"
+                android:text="@string/todo_content_title"
+                app:layout_constraintBottom_toBottomOf="@id/edTitle"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="@id/edTitle" />
+
+            <TextView
+                android:id="@+id/tvTitleView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="*"
+                android:textColor="@color/colorRed"
+                app:layout_constraintLeft_toRightOf="@id/tvTitle"
+                app:layout_constraintTop_toTopOf="@id/tvTitle" />
+
+            <EditText
+                android:id="@+id/edTitle"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_40"
+                android:layout_marginLeft="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_15"
+                android:layout_marginRight="@dimen/dp_15"
+                android:background="@drawable/editext_bg"
+                android:gravity="left|top"
+                android:text="@={model.item.title}"
+                app:layout_constraintLeft_toRightOf="@id/tvTitle"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/todo_detail"
+                app:layout_constraintLeft_toLeftOf="@id/tvTitle"
+                app:layout_constraintTop_toTopOf="@id/edDetail" />
+
+
+            <EditText
+                android:id="@+id/edDetail"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_75"
+                android:layout_marginLeft="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_15"
+                android:layout_marginRight="@dimen/dp_15"
+                android:background="@drawable/editext_bg"
+                android:gravity="left|top"
+                android:text="@={model.item.content}"
+                app:layout_constraintLeft_toRightOf="@id/tvTitle"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/edTitle" />
+
+            <TextView
+                android:id="@+id/tvTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/todo_time"
+                app:layout_constraintBottom_toBottomOf="@id/tvTimeSelect"
+                app:layout_constraintLeft_toLeftOf="@id/tvTitle"
+                app:layout_constraintTop_toTopOf="@id/tvTimeSelect" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="*"
+                android:textColor="@color/colorRed"
+                app:layout_constraintLeft_toRightOf="@id/tvTime"
+                app:layout_constraintTop_toTopOf="@id/tvTime" />
+
+            <TextView
+                android:id="@+id/tvTimeSelect"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_15"
+                android:layout_marginRight="@dimen/dp_15"
+                android:background="@drawable/editext_bg"
+                android:drawableRight="@drawable/arrow_right"
+                android:drawablePadding="@dimen/dp_5"
+                android:gravity="right|center"
+                android:hint="@string/hint_choose"
+                android:paddingTop="@dimen/dp_8"
+                android:paddingBottom="@dimen/dp_8"
+                android:text="@={model.item.dateStr}"
+                app:layout_constraintLeft_toRightOf="@id/tvTime"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/edDetail" />
+
+            <Button
+                android:id="@+id/btSave"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_50"
+                android:layout_marginRight="@dimen/dp_15"
+                android:background="@color/themColor"
+                android:text="@string/save"
+                android:textColor="@color/white"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvTimeSelect" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

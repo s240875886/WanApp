@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.tw.wan.data.viewmodels.ProjectVM" />
+    </data>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.flyco.tablayout.SlidingTabLayout
+                android:id="@+id/tab"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_48"
+                android:background="@color/themColor"
+                android:paddingLeft="@dimen/dp_8"
+                android:paddingRight="@dimen/dp_8"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tl_divider_padding="@dimen/dp_10"
+                app:tl_indicator_margin_left="5dp"
+                app:tl_indicator_margin_right="5dp"
+                app:tl_indicator_style="TRIANGLE"
+                app:tl_tab_padding="@dimen/dp_8"
+                app:tl_textsize="@dimen/sp_15" />
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/viewPage"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tab" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

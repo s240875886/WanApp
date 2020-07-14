@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+ >
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.tw.wan.data.viewmodels.TodoVM" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".activity.AddTodoActivity">
+
+        <com.hjq.bar.TitleBar
+            android:id="@+id/title_bar"
+            android:layout_width="0dp"
+            android:layout_height="49dp"
+            android:background="@color/themColor"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:leftIcon="@drawable/title_back"
+            app:lineColor="@color/color_e5e5e5"
+            app:title="添加清单"
+            app:titleColor="@color/white" />
+
+        <include
+            android:id="@+id/content"
+            layout="@layout/todo_content"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title_bar"
+            tools:model="@{model}" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

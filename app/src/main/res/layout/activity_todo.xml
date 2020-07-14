@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.hjq.bar.TitleBar
+            android:id="@+id/title_bar"
+            android:layout_width="0dp"
+            android:layout_height="49dp"
+            android:background="@color/themColor"
+            app:layout_constraintBottom_toTopOf="@id/tab"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:leftIcon="@drawable/title_back"
+            app:lineColor="@color/color_e5e5e5"
+            app:rightIcon="@drawable/app_add_icon"
+            app:title="@string/todo_title"
+            app:titleColor="@color/white" />
+
+        <com.flyco.tablayout.SlidingTabLayout
+            android:id="@+id/tab"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_48"
+            android:background="@color/themColor"
+            android:paddingLeft="@dimen/dp_8"
+            android:paddingRight="@dimen/dp_8"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title_bar"
+            app:tl_divider_padding="@dimen/dp_10"
+            app:tl_indicator_margin_left="5dp"
+            app:tl_indicator_margin_right="5dp"
+            app:tl_tab_padding="@dimen/dp_8"
+            app:tl_tab_space_equal="true"
+            app:tl_textsize="@dimen/sp_15" />
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewPage"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tab" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

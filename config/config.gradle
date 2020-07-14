@@ -1,0 +1,126 @@
+/**
+ * 共享依赖库
+ */
+def build_versions = [:]
+build_versions.min_sdk = 19
+build_versions.target_sdk = 29
+build_versions.build_tools = "29.0.2"
+ext.build_versions = build_versions
+
+ext.deps = [:]
+def versions = [:]
+versions.kotlin = '1.3.61'
+versions.app_compat = "1.1.0"
+versions.support = "1.1.0"
+versions.core_ktx = "1.2.0"
+versions.coroutines = "1.3.2"
+versions.titlebar = "6.5"
+versions.constraintlayout = "1.1.3"
+versions.multidex = "2.0.1"
+versions.utilcodex = "1.28.1"
+versions.retrofit = "2.8.1"
+versions.logging_interceptor = "4.2.2"
+versions.lifecycle = "2.2.0"
+versions.immersionbar = "3.0.0"
+versions.glide = "4.11.0"
+versions.refresh = "2.0.0"
+versions.retrofit_url_manager = "1.4.0"
+versions.banner = "2.0.8"
+versions.fragment = "1.2.4"
+versions.BannerViewPager = "3.1.0"
+versions.adapter = "3.0.2"
+versions.agentweb = "4.1.3"
+versions.LabelsView = "1.6.1"
+versions.TabLayout = "2.1.2"
+versions.room = "2.2.5"
+versions.leakcanary = "2.3"
+versions.eventbus = "3.2.0"
+versions.xpopup = "1.9.11"
+versions.Android_PickerView = "4.1.9"
+versions.statelayout = "1.0.9"
+ext.versions = versions
+
+def deps = [:]
+
+def support = [:]
+support.app_compat = "androidx.appcompat:appcompat:$versions.app_compat"
+support.design = "com.google.android.material:material:$versions.support"
+support.core_ktx = "androidx.core:core-ktx:$versions.core_ktx"
+support.fragment_runtime = "androidx.fragment:fragment:${versions.fragment}"
+support.fragment_runtime_ktx = "androidx.fragment:fragment-ktx:${versions.fragment}"
+deps.support = support
+
+
+def kotlin = [:]
+kotlin.kotlin_stdlib_jdk8 = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$versions.kotlin"
+kotlin.kotlin_reflect = "org.jetbrains.kotlin:kotlin-reflect:$versions.kotlin"
+deps.kotlin = kotlin
+
+
+def coroutines = [:]
+coroutines.coroutines_core = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$versions.coroutines"
+coroutines.coroutines_android = "org.jetbrains.kotlinx:kotlinx-coroutines-android:$versions.coroutines"
+deps.coroutines = coroutines
+
+deps.titlebar = "com.hjq:titlebar:$versions.titlebar"
+
+deps.constraintlayout = "androidx.constraintlayout:constraintlayout:$versions.constraintlayout"
+
+deps.multidex = "androidx.multidex:multidex:$versions.multidex"
+
+deps.utilcodex = "com.blankj:utilcodex:$versions.utilcodex"
+
+def retrofit = [:]
+retrofit.retrofit = "com.squareup.retrofit2:retrofit:$versions.retrofit"
+retrofit.converter_gson = "com.squareup.retrofit2:converter-gson:$versions.retrofit"
+deps.retrofit = retrofit
+
+deps.logging_interceptor = "com.squareup.okhttp3:logging-interceptor:$versions.logging_interceptor"
+
+deps.banner = "com.youth.banner:banner:$versions.banner"
+deps.retrofit_url_manager = "me.jessyan:retrofit-url-manager:$versions.retrofit_url_manager"
+
+
+def lifecycle = [:]
+lifecycle.extensions = "androidx.lifecycle:lifecycle-extensions:$versions.lifecycle"
+lifecycle.viewmodel_ktx = "androidx.lifecycle:lifecycle-viewmodel-ktx:$versions.lifecycle"
+deps.lifecycle = lifecycle
+
+def immersionbar = [:]
+immersionbar.immersionbar = "com.gyf.immersionbar:immersionbar:$versions.immersionbar"
+immersionbar.immersionbar_ktx = "com.gyf.immersionbar:immersionbar-ktx:$versions.immersionbar"
+deps.immersionbar = immersionbar
+deps.glide = "com.github.bumptech.glide:glide:$versions.glide"
+
+def refresh = [:]
+refresh.layout_kernel = "com.scwang.smart:refresh-layout-kernel:$versions.refresh"
+refresh.header_classics = "com.scwang.smart:refresh-header-classics:$versions.refresh"
+refresh.footer_classics = "com.scwang.smart:refresh-footer-classics:$versions.refresh"
+refresh.header_material = "com.scwang.smart:refresh-header-material:$versions.refresh"
+deps.refresh = refresh
+
+deps.BannerViewPager = "com.github.zhpanvip:BannerViewPager:$versions.BannerViewPager"
+deps.adapter = "com.github.CymChad:BaseRecyclerViewAdapterHelper:$versions.adapter"
+
+def agentweb = [:]
+agentweb.runtime = "com.just.agentweb:agentweb:$versions.agentweb"
+agentweb.filechooser = "com.just.agentweb:filechooser:$versions.agentweb"
+agentweb.Downloader = "com.download.library:Downloader:$versions.agentweb"
+deps.agentweb = agentweb
+
+deps.LabelsView = "com.github.donkingliang:LabelsView:$versions.LabelsView"
+deps.TabLayout = "com.flyco.tablayout:FlycoTabLayout_Lib:$versions.TabLayout@aar"
+
+def room = [:]
+room.runtime = "androidx.room:room-runtime:$versions.room"
+room.room_ktx = "androidx.room:room-ktx:$versions.room"
+room.room_compile = "androidx.room:room-compiler:$versions.room"
+deps.room = room
+deps.leakcanary = "com.squareup.leakcanary:leakcanary-android:$versions.leakcanary"
+deps.eventbus = "org.greenrobot:eventbus:$versions.eventbus"
+deps.xpopup = "com.lxj:xpopup:$versions.xpopup"
+deps.Android_PickerView = "com.contrarywind:Android-PickerView:$versions.Android_PickerView"
+deps.statelayout = "com.lxj:statelayout:$versions.statelayout"
+
+ext.deps = deps
+

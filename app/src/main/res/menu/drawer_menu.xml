@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--侧滑菜单-->
+    <item android:title="@string/app_name"/>
+    <group android:id="@+id/common">
+        <item
+            android:id="@+id/nav_menu_rank"
+            android:icon="@drawable/ic_rank"
+            android:title="@string/rank"/>
+        <item
+            android:id="@+id/nav_menu_square"
+            android:icon="@drawable/ic_square"
+            android:title="@string/square" />
+        <item
+            android:id="@+id/nav_menu_collect"
+            android:icon="@drawable/ic_collect"
+            android:title="@string/mine_collect" />
+        <item
+            android:id="@+id/nav_menu_share"
+            android:icon="@drawable/ic_share"
+            android:title="@string/mine_share" />
+
+        <item
+            android:id="@+id/nav_menu_question"
+            android:icon="@drawable/ic_question"
+            android:title="@string/question" />
+
+        <item
+            android:id="@+id/nav_menu_todo"
+            android:icon="@drawable/ic_todo"
+            android:title="@string/mine_todo" />
+    </group>
+
+    <group android:id="@+id/setting">
+        <item
+            android:id="@+id/nav_menu_setting"
+            android:icon="@drawable/ic_setting"
+            android:title="@string/setting" />
+
+        <item
+            android:id="@+id/nav_menu_logout"
+            android:icon="@drawable/ic_logout"
+            android:title="@string/mine_logout" />
+    </group>
+</menu>
