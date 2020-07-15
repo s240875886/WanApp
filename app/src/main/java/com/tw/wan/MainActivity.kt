@@ -27,7 +27,7 @@ import org.greenrobot.eventbus.ThreadMode
 
 
 class MainActivity : BaseActivity<ActivityMainBinding>() {
-
+    //
     private val fragments by lazy {
         SparseArray<Fragment>()
     }
