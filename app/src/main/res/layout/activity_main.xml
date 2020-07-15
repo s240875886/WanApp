@@ -38,14 +38,15 @@
                 app:menu="@menu/home_menu" />
 
         </LinearLayout>
+
         <com.google.android.material.navigation.NavigationView
             android:id="@+id/navigation_draw"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_alignParentTop="true"
             android:layout_gravity="start"
-            android:fitsSystemWindows="true"
             android:background="@color/white"
+            android:fitsSystemWindows="true"
             app:headerLayout="@layout/layout_drawer_header"
             app:menu="@menu/drawer_menu" />
     </androidx.drawerlayout.widget.DrawerLayout>
