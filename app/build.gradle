@@ -6,8 +6,6 @@ apply plugin: 'kotlin-kapt'
 android {
     buildFeatures {
         dataBinding = true
-        // for view binding :
-        // viewBinding = true
     }
     compileSdkVersion build_versions.target_sdk
     buildToolsVersion build_versions.build_tools
